@@ -3,6 +3,7 @@ A python program that will take an internet domain name (e.g. “jana.com”) an
 
 ## Sample Usage
 `python find_email_addresses.py -domain geography.dartmouth.edu`
+
 Sample output: 
 ```
 Found these email addresses:
@@ -18,7 +19,8 @@ rockefeller.center@dartmouth.edu
 
 
 ## Installation
-Here are command line options to install certain libraries before the running `---.py`
+Here are command line options to install certain libraries before running `find_email_addresses.py`
+
 ```
 $ git clone https://github.com/irenelfeng/webpage-emails.git
 $ cd webpage-emails
