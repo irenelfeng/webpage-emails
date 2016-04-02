@@ -26,5 +26,6 @@ $ git clone https://github.com/irenelfeng/webpage-emails.git
 $ cd webpage-emails
 $ pip install argparse
 $ pip install beautifulsoup4
+$ pip install requests
 $ python find_email_addresses.py
 ```
