@@ -20,8 +20,7 @@ def get_page(driver, page):
         response = driver.page_source
 
         content = BeautifulSoup(response.encode("utf-8",'ignore'))
-    #except requests.exceptions.ConnectionError: 
-        # return None
+
     except UnicodeError:
         print "Unicode error on " + page + ". Skipping..."
         return None
@@ -46,20 +45,6 @@ def get_all_urls(page, domain_name):
             page_list.append(link['href'])
 
     return page_list
-
-# def angular_get_urls(page, domain_name):
-#     page_list = []
-
-#     angular_tag = "changeRoute"
-#     for link in page.findAll(True, {"ng-click":True}):
-#         if link['ng-click'].startswith(angular_tag):
-#             url = link['ng-click'][len(angular_tag):]
-#             # strip punctuation
-#             url = re.sub(r'[^\w\s]','',url) 
-#             page_list.append("http://"+domain_name+'/'+url)
-
-#     return page
-
 
 def get_emails(page):
     """given page, get list of emails in the page"""
@@ -91,13 +76,9 @@ if __name__=='__main__':
     domain_url = http_domain(domain)
 
     #initialize variables
-    # list of urls need to crawl
     crawling = deque([domain_url])
-    #list of urls we have already crawled
     url_list = set([domain_url])
-    #list of emails we have gotten
     emails = set()
-    #PhantomJS driver
     driver = start_up_driver()
 
     # crawls each webpage in the stack crawling
